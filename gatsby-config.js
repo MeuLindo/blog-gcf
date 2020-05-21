@@ -14,10 +14,10 @@ module.exports = {
     {
       resolve: 'gatsby-source-cosmicjs',
       options: {
-        bucketSlug: process.env.COSMIC_BUCKET,
+        bucketSlug: 'blog-gcf',
         objectTypes: ['posts','settings'],
         apiAccess: {
-          read_key: process.env.COSMIC_READ_KEY,
+          read_key: 'laoHlsxw9a8Ht0zo8y4gZBNBPa05geItopgyNQYeLSDw3DKGI2',
         },
         localMedia: true
       }
