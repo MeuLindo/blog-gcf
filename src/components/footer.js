@@ -32,10 +32,10 @@ export default () => (
                     }}
                 >
                     <strong>
-                        Dia do Arauto. 
+                        Dia do Arauto
                     </strong>
                 </a>
-                Todos os direitos reservados © {new Date().getFullYear()}
+               . Todos os direitos reservados © {new Date().getFullYear()}
             </p>
         </footer>
     </div>
