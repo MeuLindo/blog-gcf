@@ -10,20 +10,20 @@ import Layout from '../components/layout'
 import { rhythm, scale } from '../utils/typography'
 
 class BlogPostTemplate extends React.Component {
-  render() {
-    const post = this.props.data.cosmicjsPosts
-    const siteTitle = get(
-      this.props,
-      'data.cosmicjsSettings.metadata.site_title'
-    )
-    const author = get(this, 'props.data.cosmicjsSettings.metadata')
-    const location = get(this, 'props.location')
-    const { previous, next } = this.props.pageContext
+    render() {
+        const post = this.props.data.cosmicjsPosts
+        const siteTitle = get(
+            this.props,
+            'data.cosmicjsSettings.metadata.site_title'
+        )
+        const author = get(this, 'props.data.cosmicjsSettings.metadata')
+        const location = get(this, 'props.location')
+        const { previous, next } = this.props.pageContext
 
-    return (
-      <Layout location={location}>
-        <style>
-          {`
+        return ( <
+            Layout location = { location } >
+            <
+            style > { `
           .post-content {
             text-align: justify;
           }
@@ -39,86 +39,96 @@ class BlogPostTemplate extends React.Component {
               height: ${rhythm(13)};
             }
           }
-        `}
-        </style>
-        <Helmet title={`${post.title} | ${siteTitle}`} />
-        <div
-          style={{
-            marginTop: rhythm(1.4),
-          }}
-        >
-          <Link to="/">← Back to Posts</Link>
-        </div>
-        <h1
-          style={{
-            marginTop: rhythm(1),
-          }}
-        >
-          {post.title}
-        </h1>
-        <p
-          style={{
-            ...scale(-1 / 5),
-            display: 'block',
-            marginBottom: rhythm(0.6),
-            marginTop: rhythm(-0.6),
-          }}
-        >
-          {post.created}
-        </p>
-        <BackgroundImage
-          Tag="div"
-          className="post-hero"
-          fluid={post.metadata.hero.local.childImageSharp.fluid}
-          backgroundColor={`#007ACC`}
-          style={{
-            marginBottom: rhythm(0.6),
-          }}
-        />
-        <div
-          className="post-content"
-          dangerouslySetInnerHTML={{ __html: post.content }}
-        />
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
-        <Bio settings={author} />
+        ` } <
+            /style> <
+            Helmet title = { `${post.title} | ${siteTitle}` }
+            /> <
+            div style = {
+                {
+                    marginTop: rhythm(1.4),
+                }
+            } >
+            <
+            Link to = "/" > ←Back to Posts < /Link> < /
+            div > <
+            h1 style = {
+                {
+                    marginTop: rhythm(1),
+                }
+            } > { post.title } <
+            /h1> <
+            p style = {
+                {
+                    ...scale(-1 / 5),
+                        display: 'block',
+                        marginBottom: rhythm(0.6),
+                        marginTop: rhythm(-0.6),
+                }
+            } > { post.created } <
+            /p> <
+            BackgroundImage Tag = "div"
+            className = "post-hero"
+            fluid = { post.metadata.hero.local.childImageSharp.fluid }
+            backgroundColor = { `#007ACC` }
+            style = {
+                {
+                    marginBottom: rhythm(0.6),
+                }
+            }
+            /> <
+            div className = "post-content"
+            dangerouslySetInnerHTML = {
+                { __html: post.content }
+            }
+            /> <
+            hr style = {
+                {
+                    marginBottom: rhythm(1),
+                }
+            }
+            /> <
+            Bio settings = { author }
+            />
 
-        <ul
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'space-between',
-            listStyle: 'none',
-            padding: 0,
-          }}
-        >
-          {previous && (
-            <li>
-              <Link to={`posts/${previous.slug}`} rel="prev">
-                ← {previous.title}
-              </Link>
-            </li>
-          )}
+            <
+            ul style = {
+                {
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    justifyContent: 'space-between',
+                    listStyle: 'none',
+                    padding: 0,
+                }
+            } > {
+                previous && ( <
+                    li >
+                    <
+                    Link to = { `posts/${previous.slug}` }
+                    rel = "prev" > ←{ previous.title } <
+                    /Link> < /
+                    li >
+                )
+            }
 
-          {next && (
-            <li>
-              <Link to={`posts/${next.slug}`} rel="next">
-                {next.title} →
-              </Link>
-            </li>
-          )}
-        </ul>
-      </Layout>
-    )
-  }
+            {
+                next && ( <
+                    li >
+                    <
+                    Link to = { `posts/${next.slug}` }
+                    rel = "next" > { next.title }→ <
+                    /Link> < /
+                    li >
+                )
+            } <
+            /ul> < /
+            Layout >
+        )
+    }
 }
 
 export default BlogPostTemplate
 
-export const pageQuery = graphql`
+export const pageQuery = graphql `
   query BlogPostBySlug($slug: String!) {
     cosmicjsPosts(slug: { eq: $slug }) {
       id
@@ -129,7 +139,16 @@ export const pageQuery = graphql`
         hero {
           local {
             childImageSharp {
-              fluid(quality: 90, maxWidth: 1920) {
+              fluid(
+                quality: 90, 
+                maxWidth: 1920,
+                duotone: {
+                  highlight: "#f0960e",
+                  shadow: "#0e77f0",
+                  opacity: 10
+                }
+                 
+              ) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }
