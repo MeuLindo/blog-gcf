@@ -83,7 +83,13 @@ export default () => (
                                 top: rhythm(10),
                                 marginTop: '0',
                                 height: rhythm(2.5),
-                                color: 'white'
+                                color: 'white',
+                                textShadowColor: 'rgba(0, 0, 0, 0.75)',
+                                textShadowOffset: {
+                                  width: -1, 
+                                  height: 1
+                                },
+                                textShadowRadius: 10
                         }}
                     >
                         <Link 
