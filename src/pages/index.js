@@ -32,7 +32,7 @@ class BlogIndex extends React.Component {
                 }}
               >
                 <Link style={{ boxShadow: 'none' }} to={`posts/${node.slug}`}>
-                  {title}haha
+                  {title}
                 </Link>
               </h3>
               <small>{node.created} </small>
