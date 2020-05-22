@@ -12,7 +12,7 @@ export default () => (
             }}
         >
             <p>
-                Desenvolvido orgulhosamente por &nbsp
+                Desenvolvido orgulhosamente por&nbsp;
                 <a 
                     target = "_blank"
                     href = "https://diadoarauto.com.br"
