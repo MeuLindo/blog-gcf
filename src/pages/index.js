@@ -53,12 +53,15 @@ class BlogIndex extends React.Component {
                   <div
                     style = {{
                       marginBottom: rhythm(.616),
-                      fontSize: rhythm(0.5)
+                      fontSize: rhythm(0.5),
                     }}
                   > 
                     { node.created }
                   </div>
                   <p 
+                    style = {{
+                      textAlign: 'justify',
+                    }}
                     dangerouslySetInnerHTML = {{
                       __html: node.metadata.description 
                     }}

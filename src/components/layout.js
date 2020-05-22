@@ -24,10 +24,11 @@ export default ({ children, location }) => (
           maxWidth: rhythm(25),
           padding: `0 ${rhythm(3 / 4)} ${rhythm(1.5)} ${rhythm(3 / 4)}`,
           minHeight: '100vh',
+          
         }}
       >
         { children }
       </div> 
-      <Footer />
-      </div>
+    <Footer />
+  </div>
 )
