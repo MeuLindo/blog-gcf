@@ -145,7 +145,7 @@ export const pageQuery = graphql `
                 duotone: {
                   highlight: "#f0960e",
                   shadow: "#0e77f0",
-                  opacity: 10
+                  opacity: 42
                 }
                  
               ) {

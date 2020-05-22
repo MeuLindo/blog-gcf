@@ -26,7 +26,7 @@ export default ({ children, location }) => ( <
                     duotone: {
                       highlight: "#f0960e",
                       shadow: "#0e77f0",
-                      opacity: 50
+                      opacity: 42
                     }
                   ){
                     ...GatsbyImageSharpFluid_withWebp
