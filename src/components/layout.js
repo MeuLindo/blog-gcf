@@ -6,7 +6,6 @@ import BackgroundImage from 'gatsby-background-image'
 
 import cosmicjsLogo from '../../static/cosmicjs.svg'
 import { rhythm, scale } from '../utils/typography'
-import './head.js'
 
 // Import typefaces
 import 'typeface-montserrat'
@@ -64,125 +63,109 @@ export default ({ children, location }) => ( <
             }
 
             if (location.pathname === rootPath || location.pathname === postsPath) {
-                header = ( <
-                    BackgroundImage Tag = "div"
+                header = ( 
+                  <BackgroundImage 
+                    Tag = "div"
                     className = "post-hero"
                     fluid = { homgePageHero }
-                    style = {
-                        {
-                            height: rhythm(24),
-                            position: 'relative',
-                            marginBottom: `${rhythm(1.1618)}`,
-                        }
-                    } >
-                    <
-                    div >
-                    <
-                    /div> <
-                    div className = 'logo'
-                    style = {
-                        {
-                            maxWidth: 150,
-                            marginLeft: 'auto',
-                            marginRight: 'auto',
-                            paddingTop: `${rhythm(1.1618)}`,
-                        }
-                    } >
-                    <
-                    Img fluid = { logoDDA }
-                    alt = 'Logomarca Dia do Arauto'
-                    style = {
-                        {
-
-                        }
-                    }
-                    /> < /
-                    div > <
-                    h1 style = {
-                        {
-                            ...scale(1.3),
-                                position: 'absolute',
-                                textAlign: 'center',
-                                left: 0,
-                                right: 0,
-                                top: rhythm(10),
-                                marginTop: '0',
-                                height: rhythm(2.5),
-                                color: 'white'
-                        }
-                    } >
-                    <
-                    Link style = {
-                        {
-                            boxShadow: 'none',
-                            textDecoration: 'none',
-                            color: 'inherit',
-                        }
-                    }
-                    to = { '/' } > { siteTitle } <
-                    /Link> < /
-                    h1 > <
-                    /BackgroundImage>
+                    style = {{
+                          height: rhythm(24),
+                          position: 'relative',
+                          marginBottom: `${rhythm(1.1618)}`,
+                        }}
+                  > 
+                    <div 
+                      className = 'logo'
+                      style = {{
+                        maxWidth: 150,
+                        marginLeft: 'auto',
+                        marginRight: 'auto',
+                        paddingTop: `${rhythm(1.1618)}`,
+                      }}
+                    >
+                      <Img 
+                        fluid = { logoDDA }
+                        alt = 'Logomarca Dia do Arauto'
+                      /> 
+                    </div> 
+                    <h1 
+                      style = {{
+                        ...scale(1.3),
+                          position: 'absolute',
+                          textAlign: 'center',
+                          left: 0,
+                          right: 0,
+                          top: rhythm(10),
+                          marginTop: '0',
+                          height: rhythm(2.5),
+                          color: 'white'
+                        }}
+                    >
+                      <Link 
+                        style = {{
+                          boxShadow: 'none',
+                          textDecoration: 'none',
+                          color: 'inherit',
+                        }}
+                        to = { '/' } > { siteTitle } 
+                      </Link>
+                    </h1>
+                 </BackgroundImage>
                 )
             } else {
-                header = ( <
-                    h3 style = {
-                        {
-                            fontFamily: 'Montserrat, sans-serif',
-                            marginTop: 0,
-                            marginBottom: rhythm(-1),
-                            marginLeft: 'auto',
-                            marginRight: 'auto',
-                            maxWidth: rhythm(24),
-                            paddingTop: `${rhythm(1.5)}`,
-                        }
-                    } >
-                    <
-                    Link style = {
-                        {
-                            boxShadow: 'none',
-                            textDecoration: 'none',
-                            color: 'inherit',
-                        }
-                    }
-                    to = { '/' } > { siteTitle } <
-                    /Link> < /
-                    h3 >
+                header = ( 
+                  <h3 
+                    style = {{
+                      fontFamily: 'Montserrat, sans-serif',
+                      marginTop: 0,
+                      marginBottom: rhythm(-1),
+                      marginLeft: 'auto',
+                      marginRight: 'auto',
+                      maxWidth: rhythm(24),
+                      paddingTop: `${rhythm(1.5)}`,
+                    }} 
+                  >
+                    <Link 
+                      style = {{
+                        boxShadow: 'none',
+                        textDecoration: 'none',
+                        color: 'red',
+                      }}
+                        to = { '/' } > { siteTitle } 
+                    </Link>
+                  </h3>
                 )
             }
             return ( 
               <div> 
-                { header }
                 <Head />
-
-                <div style = {
-                      {
+                { header }
+                
+                <div style = {{
                           marginLeft: 'auto',
                           marginRight: 'auto',
                           maxWidth: rhythm(24),
                           padding: `0 ${rhythm(3 / 4)} ${rhythm(1.5)} ${rhythm(3 / 4)}`,
                           minHeight: 'calc(100vh - 42px)',
-                      }
-                  }>
-                    { children }
+                      }}
+                >
+                  { children }
                 </div> 
                 <footer 
-                  style = {
-                    {
+                  style = {{
                       textAlign: 'center',
                       padding: `0 20px 80px 0`,
-                    }
-                  }>
+                    }}
+                >
                     Desenvolvido orgulhosamente por 
                   <a 
                     target = "_blank"
                     href = "https://diadoarauto.com.br"
-                    style = {
-                      {
-                        color: '#191919',
+                    style = {{
+                        color: 'orange',
                         boxShadow: 'none',
-                        }
-                      }>
+                        }}
+                  >
                     <strong> Dia do Arauto.</strong>
                     </a>
                   </footer>
