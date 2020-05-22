@@ -49,7 +49,7 @@ class BlogPostTemplate extends React.Component {
                 }
             } >
             <
-            Link to = "/" > ←Back to Posts < /Link> < /
+            Link to = "/" > ←Voltar para a home < /Link> < /
             div > <
             h1 style = {
                 {
