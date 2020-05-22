@@ -6,10 +6,12 @@ import BackgroundImage from 'gatsby-background-image'
 
 import cosmicjsLogo from '../../static/cosmicjs.svg'
 import { rhythm, scale } from '../utils/typography'
+import './head.js'
 
 // Import typefaces
 import 'typeface-montserrat'
 import 'typeface-merriweather'
+import Head from './head.js'
 
 export default ({ children, location }) => ( <
     StaticQuery query = { graphql `
@@ -148,38 +150,43 @@ export default ({ children, location }) => ( <
                     h3 >
                 )
             }
-            return ( <
-                div > { header } <
-                div style = {
+            return ( 
+              <div> 
+                { header }
+                <Head />
+
+                <div style = {
+                      {
+                          marginLeft: 'auto',
+                          marginRight: 'auto',
+                          maxWidth: rhythm(24),
+                          padding: `0 ${rhythm(3 / 4)} ${rhythm(1.5)} ${rhythm(3 / 4)}`,
+                          minHeight: 'calc(100vh - 42px)',
+                      }
+                  }>
+                    { children }
+                </div> 
+                <footer 
+                  style = {
                     {
-                        marginLeft: 'auto',
-                        marginRight: 'auto',
-                        maxWidth: rhythm(24),
-                        padding: `0 ${rhythm(3 / 4)} ${rhythm(1.5)} ${rhythm(3 / 4)}`,
-                        minHeight: 'calc(100vh - 42px)',
+                      textAlign: 'center',
+                      padding: `0 20px 80px 0`,
                     }
-                } > { children } <
-                /div> <
-                footer style = {
-                    {
-                        textAlign: 'center',
-                        padding: `0 20px 80px 0`,
-                    }
-                } >
-                Desenvolvido orgulhosamente por <
-                a target = "_blank"
-                href = "https://instagram.com/alexandreffaria"
-                style = {
-                    {
+                  }>
+                    Desenvolvido orgulhosamente por 
+                  <a 
+                    target = "_blank"
+                    href = "https://diadoarauto.com.br"
+                    style = {
+                      {
                         color: '#191919',
                         boxShadow: 'none',
-                    }
-                } >
-                <
-                strong > Alexandre Faria < /strong> < /
-                a > <
-                /footer> < /
-                div >
+                        }
+                      }>
+                    <strong> Dia do Arauto.</strong>
+                    </a>
+                  </footer>
+              </div>
             )
         }
     }
