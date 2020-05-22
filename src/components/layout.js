@@ -11,46 +11,23 @@ import { rhythm, scale } from '../utils/typography'
 import 'typeface-montserrat'
 import 'typeface-merriweather'
 import Header from './header.js'
+import Footer from './footer.js'
 
-export default ({ children, location }) => ( 
-  
-          <div>
-            <Header/>  
-            <div 
-              style = {{
-                marginLeft: 'auto',
-                marginRight: 'auto',
-                maxWidth: rhythm(25),
-                padding: `0 ${rhythm(3 / 4)} ${rhythm(1.5)} ${rhythm(3 / 4)}`,
-                minHeight: '100vh',
-              }}
-            >
-              { children }
-            </div> 
-            <footer 
-              style = {{
-                textAlign: 'center',
-                padding: `0 20px 80px 0`,
-                marginLeft: 'auto',
-                marginRight: 'auto',
-              }}
-            >
-              <p>
-                Desenvolvido orgulhosamente por &nbsp
-                  <a 
-                    target = "_blank"
-                    href = "https://diadoarauto.com.br"
-                    style = {{
-                      color: 'orange',
-                      boxShadow: 'none',
-                    }}
-                  >
-                    <strong>
-                      Dia do Arauto. 
-                    </strong>
-                  </a>
-                Todos os direitos reservados © {new Date().getFullYear()}
-              </p>
-            </footer>
-          </div>
+
+export default ({ children, location }) => (
+  <div>
+    <Header />  
+      <div 
+        style = {{
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          maxWidth: rhythm(25),
+          padding: `0 ${rhythm(3 / 4)} ${rhythm(1.5)} ${rhythm(3 / 4)}`,
+          minHeight: '100vh',
+        }}
+      >
+        { children }
+      </div> 
+      <Footer />
+      </div>
 )
