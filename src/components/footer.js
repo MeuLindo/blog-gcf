@@ -2,16 +2,26 @@ import React from "react"
 import { rhythm, scale } from '../utils/typography'
 
 export default () => ( 
-    <div>
+    <div
+        style = {{
+            
+        }}
+    >
         <footer 
             style = {{
-                textAlign: 'center',
-                padding: `0 20px 80px 0`,
-                marginLeft: 'auto',
-                marginRight: 'auto',
+                maxWidth: rhythm(25),
+                padding: `0 ${rhythm(3 / 4)} ${rhythm(1.5)} ${rhythm(3 / 4)}`,
+                minHeight: '5vh',
+                margin: 'auto',
+                textAlign: 'center'
+                
             }}
         >
-            <p>
+            <p
+                style={{
+                    fontSize: rhythm(0.5)
+                }}
+            >
                 Desenvolvido orgulhosamente por&nbsp;
                 <a 
                     target = "_blank"
