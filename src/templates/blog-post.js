@@ -134,7 +134,7 @@ export const pageQuery = graphql `
       id
       content
       title
-      created(formatString: "MMMM DD, YYYY")
+      created(formatString: "DD/MM/YYYY")
       metadata {
         hero {
           local {
@@ -145,7 +145,7 @@ export const pageQuery = graphql `
                 duotone: {
                   highlight: "#f0960e",
                   shadow: "#0e77f0",
-                  opacity: 42
+                  opacity: 61
                 }
                  
               ) {
