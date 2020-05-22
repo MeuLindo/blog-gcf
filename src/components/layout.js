@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import Img from 'gatsby-image'
 import { StaticQuery, graphql } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
 
@@ -34,6 +35,15 @@ export default ({ children, location }) => ( <
                 }
               }
             }
+            logodda {
+              local {
+                childImageSharp{
+                  fluid(quality: 90, maxWidth: 300,){
+                    ...GatsbyImageSharpFluid_withWebp
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -41,8 +51,8 @@ export default ({ children, location }) => ( <
     render = {
         data => {
             const siteTitle = data.cosmicjsSettings.metadata.site_heading
-            const homgePageHero =
-                data.cosmicjsSettings.metadata.homepage_hero.local.childImageSharp.fluid
+            const homgePageHero = data.cosmicjsSettings.metadata.homepage_hero.local.childImageSharp.fluid
+            const logoDDA = data.cosmicjsSettings.metadata.logodda.local.childImageSharp.fluid
             let header
 
             let rootPath = `/`
@@ -65,6 +75,28 @@ export default ({ children, location }) => ( <
                         }
                     } >
                     <
+                    div >
+                    <
+                    /div> <
+                    div className = 'logo'
+                    style = {
+                        {
+                            maxWidth: 150,
+                            marginLeft: 'auto',
+                            marginRight: 'auto',
+                            paddingTop: `${rhythm(1.1618)}`,
+                        }
+                    } >
+                    <
+                    Img fluid = { logoDDA }
+                    alt = 'Logomarca Dia do Arauto'
+                    style = {
+                        {
+
+                        }
+                    }
+                    /> < /
+                    div > <
                     h1 style = {
                         {
                             ...scale(1.3),
@@ -72,7 +104,7 @@ export default ({ children, location }) => ( <
                                 textAlign: 'center',
                                 left: 0,
                                 right: 0,
-                                top: rhythm(4),
+                                top: rhythm(10),
                                 marginTop: '0',
                                 height: rhythm(2.5),
                                 color: 'white'
@@ -135,9 +167,9 @@ export default ({ children, location }) => ( <
                         padding: `0 20px 80px 0`,
                     }
                 } >
-                powered by & nbsp; <
+                Desenvolvido orgulhosamente por <
                 a target = "_blank"
-                href = "https://gatsbyjs.org"
+                href = "https://instagram.com/alexandreffaria"
                 style = {
                     {
                         color: '#191919',
@@ -145,37 +177,7 @@ export default ({ children, location }) => ( <
                     }
                 } >
                 <
-                img src = { gatsbyLogo }
-                alt = "Gatsby JS"
-                style = {
-                    {
-                        width: '20px',
-                        margin: '0 4px -3px 2px',
-                    }
-                }
-                /> <
-                strong > Gatsby < /strong> < /
-                a > &
-                nbsp; and & nbsp; <
-                a target = "_blank"
-                href = "https://cosmicjs.com"
-                style = {
-                    {
-                        color: '#191919',
-                        boxShadow: 'none',
-                    }
-                } >
-                <
-                img src = { cosmicjsLogo }
-                alt = "Cosmic JS"
-                style = {
-                    {
-                        width: '18px',
-                        margin: '0 4px -2px 5px',
-                    }
-                }
-                /> <
-                strong > Cosmic JS < /strong> < /
+                strong > Alexandre Faria < /strong> < /
                 a > <
                 /footer> < /
                 div >

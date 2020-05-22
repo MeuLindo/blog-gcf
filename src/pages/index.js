@@ -19,13 +19,13 @@ class BlogIndex extends React.Component {
         const location = get(this, 'props.location')
 
         return ( <
-                Layout location = { location } >
+            Layout location = { location } >
 
-                <
-                Helmet title = { siteTitle }
-                /> <
-                Bio settings = { author }
-                /> {
+            <
+            Helmet title = { siteTitle }
+            />  <
+            Bio settings = { author }
+            /> {
                 posts.map(({ node }) => {
                     const title = get(node, 'title') || node.slug
                     return ( <
@@ -53,8 +53,8 @@ class BlogIndex extends React.Component {
                 })
             } <
             /Layout>
-    )
-}
+        )
+    }
 }
 
 export default BlogIndex
