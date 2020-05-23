@@ -8,6 +8,10 @@ import { StaticQuery, graphql } from 'gatsby'
 import { ThemeToggler } from 'gatsby-plugin-dark-mode'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import '../utils/fontawesome'
+import CheckIcon from '@material-ui/icons/Check'
+import ToggleButton from '@material-ui/lab/ToggleButton'
+
+
 
 export default () => ( 
   <StaticQuery query = { graphql `
@@ -50,6 +54,7 @@ export default () => (
         const siteTitle = data.cosmicjsSettings.metadata.site_heading
         const homgePageHero = data.cosmicjsSettings.metadata.homepage_hero.local.childImageSharp.fluid
         const logoDDA = data.cosmicjsSettings.metadata.logodda.local.childImageSharp.fluid
+        const [selected, setSelected] = React.useState(false)
         return ( 
           <div>
             <BackgroundImage 
@@ -104,7 +109,12 @@ export default () => (
                             to = { '/' } > { siteTitle } 
                         </Link>
                     </h1>
-                    <div>
+                    <div
+                      style = {{
+                        position: 'absolute',
+                        top: rhythm(0.8)
+                      }}
+                    >
                       <ThemeToggler>
                         {({ theme, toggleTheme }) => (
                           <label>
@@ -112,11 +122,23 @@ export default () => (
                               type="checkbox"
                               onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
                               checked={theme === 'dark'}
+                              style = {{
+                                display: 'none'
+                              }}
                             />
                             <div
-
+                              style = {{
+                                
+                              }}
                             >
-                              <FontAwesomeIcon icon='coffee' />
+                              <FontAwesomeIcon 
+                                icon = 'sun'
+                                style = {{
+                                  fontSize: rhythm(2),
+                                  marginLeft: rhythm(0.8),
+                                 
+                                }}
+                              />
                             </div>{' '}
                             
                           </label>
