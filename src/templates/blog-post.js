@@ -4,6 +4,7 @@ import { Link } from 'gatsby'
 import get from 'lodash/get'
 import { graphql } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
+import Img from 'gatsby-image'
 
 import Bio from '../components/Bio'
 import Layout from '../components/layout'
@@ -26,10 +27,15 @@ class BlogPostTemplate extends React.Component {
           .post-content {
             text-align: justify;
           }
+          .post-hero-shot {
+            width: calc(100% + ${rhythm(3)});
+            margin-left: ${rhythm(-1.5)};
+            height: ${rhythm(18)};
+          }
           @media (max-width: ${rhythm(32)}) {
-            .post-hero {
+            .post-hero-shot {
               width: calc(100% + ${rhythm((3 / 4) * 2)});
-              margin-left: ${rhythm(-3 / 4)};
+              
               height: ${rhythm(13)};
             }
           }
@@ -38,7 +44,7 @@ class BlogPostTemplate extends React.Component {
         <Helmet title = { `${post.title} | ${siteTitle}` } />
             <div 
               style = {{
-                    marginTop: rhythm(1.4),
+                    marginTop: rhythm(0.4),
                 }}
             >
             <Link 
@@ -63,9 +69,8 @@ class BlogPostTemplate extends React.Component {
             >
               { post.created } 
             </p>
-            <BackgroundImage 
-              Tag = "div"
-              className = "post-hero"
+            <Img
+              className = "post-hero-shot"
               fluid = { post.metadata.hero.local.childImageSharp.fluid }
               backgroundColor = { `#007ACC` }
               style = {{
