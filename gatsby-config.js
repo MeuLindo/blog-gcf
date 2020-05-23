@@ -3,6 +3,7 @@ module.exports = {
         `gatsby-plugin-offline`,
         `gatsby-plugin-react-helmet`,
         `gatsby-transformer-sharp`,
+        'gatsby-plugin-dark-mode',
         {
             resolve: `gatsby-plugin-sharp`,
             options: {

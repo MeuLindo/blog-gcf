@@ -5,6 +5,7 @@ import Img from 'gatsby-image'
 import { Link } from 'gatsby'
 import { rhythm, scale } from '../utils/typography'
 import { StaticQuery, graphql } from 'gatsby'
+import { ThemeToggler } from 'gatsby-plugin-dark-mode'
 
 export default () => ( 
   <StaticQuery query = { graphql `
@@ -101,6 +102,20 @@ export default () => (
                             to = { '/' } > { siteTitle } 
                         </Link>
                     </h1>
+                    <div>
+                      <ThemeToggler>
+                        {({ theme, toggleTheme }) => (
+                          <label>
+                            <input
+                              type="checkbox"
+                              onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
+                              checked={theme === 'dark'}
+                            />{' '}
+                            Dark mode
+                          </label>
+                        )}
+                      </ThemeToggler>
+                    </div>
                 </BackgroundImage>
           </div>
         )

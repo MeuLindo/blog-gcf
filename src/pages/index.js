@@ -8,6 +8,7 @@ import Bio from '../components/Bio'
 import Layout from '../components/layout'
 import { rhythm, scale } from '../utils/typography'
 
+
 class BlogIndex extends React.Component {
   render() {
     const siteTitle = get(
