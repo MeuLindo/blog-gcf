@@ -30,10 +30,8 @@ class BlogIndex extends React.Component {
             marginBottom: rhythm(1.8),
           }}
         >
-          Se divirta!
-          <span role="img" aria-label="guitar">
-            👍
-          </span>
+          Se divirta! 🖖
+
         </h2>
         {
           posts.map(({ node }) => {
