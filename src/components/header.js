@@ -112,7 +112,8 @@ export default () => (
                     <div
                       style = {{
                         position: 'absolute',
-                        top: rhythm(0.8)
+                        top: rhythm(0.8),
+                        left: rhythm(0.8)
                       }}
                     >
                       <ThemeToggler>
@@ -134,9 +135,7 @@ export default () => (
                               <FontAwesomeIcon 
                                 icon = 'sun'
                                 style = {{
-                                  fontSize: rhythm(2),
-                                  marginLeft: rhythm(0.8),
-                                 
+                                  fontSize: rhythm(2),                                  
                                 }}
                               />
                             </div>{' '}
