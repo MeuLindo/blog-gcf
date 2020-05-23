@@ -31,6 +31,9 @@ class BlogIndex extends React.Component {
           }}
         >
           Se divirta!
+          <span role="img" aria-label="guitar">
+            👍
+          </span>
         </h2>
         {
           posts.map(({ node }) => {

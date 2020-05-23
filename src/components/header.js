@@ -108,6 +108,7 @@ export default () => (
                             }}
                             to = { '/' } > { siteTitle } 
                         </Link>
+                        🎉
                     </h1>
                     <div
                       style = {{
