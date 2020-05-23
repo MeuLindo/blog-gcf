@@ -6,6 +6,8 @@ import { Link } from 'gatsby'
 import { rhythm, scale } from '../utils/typography'
 import { StaticQuery, graphql } from 'gatsby'
 import { ThemeToggler } from 'gatsby-plugin-dark-mode'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import '../utils/fontawesome'
 
 export default () => ( 
   <StaticQuery query = { graphql `
@@ -110,9 +112,15 @@ export default () => (
                               type="checkbox"
                               onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
                               checked={theme === 'dark'}
-                            />{' '}
-                            Dark mode
+                            />
+                            <div
+
+                            >
+                              <FontAwesomeIcon icon='coffee' />
+                            </div>{' '}
+                            
                           </label>
+                          
                         )}
                       </ThemeToggler>
                     </div>

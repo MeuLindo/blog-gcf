@@ -16,7 +16,13 @@ import Footer from './footer.js'
 
 
 export default ({ children, location }) => (
-  <div>
+  <div
+    style = {{
+      backgroundColor: 'var(--bg)',
+      color: 'var(--textNormal)',
+      transition: 'color 0.1s ease-out, background 0.2s ease-out',
+    }}
+  >
     <Header />  
       <div 
         style = {{
@@ -25,9 +31,7 @@ export default ({ children, location }) => (
           maxWidth: rhythm(25),
           padding: `0 ${rhythm(3 / 4)} ${rhythm(1.5)} ${rhythm(3 / 4)}`,
           minHeight: '100vh',
-          backgroundColor: 'var(--bg)',
-          color: 'var(--textNormal)',
-          transition: 'color 0.1s ease-out, background 0.2s ease-out',
+         
           
         }}
       >
