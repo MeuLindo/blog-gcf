@@ -2,9 +2,8 @@ body {
     --bg: rgb(233, 233, 233);
     --textNormal: #222;
     --textTitle: #222;
-    --textLink: blue;
     --hr: hsla(0, 0%, 0%, 0.2);
-  
+    --link: rgb(224, 151, 83);
     background-color: var(--bg);
   }
   
@@ -13,18 +12,20 @@ body.dark {
     --bg: rgb(15, 41, 75);
     --textNormal: rgba(255, 255, 255, 0.88);
     --textTitle: white;
-    --textLink: yellow;
     --hr: hsla(0, 0%, 100%, 0.2);
+    --link: rgb(221, 125, 35);
+    
 }
 
 a {
-    text-decoration: none;
+    text-decoration: wavy overline;
 }
 
-a:hover{
-    color: rgb(61, 61, 175);
+body.dark a:hover{
+    color: var(--link); 
+   
 }
 
-a.dark:hover{
-    color: var(--textLink);
+body a:hover{
+    color: var(--link);
 }
