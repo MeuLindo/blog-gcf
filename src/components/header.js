@@ -26,9 +26,9 @@ export default () => (
                   quality: 90, 
                   maxWidth: 1920,
                   duotone: {
-                    highlight: "#f0960e",
-                    shadow: "#0e77f0",
-                    opacity: 61
+                    highlight: "#FEC194",
+                    shadow: "#FF0061",
+                    opacity: 100
                   }
                 ){
                   ...GatsbyImageSharpFluid_withWebp
